@@ -462,16 +462,18 @@ enum LineStyle : Int {
 		
 		let finalFontDescriptor = finalFont.fontDescriptor
 		if style == .italic {
+            attributes[NSAttributedStringKey.foregroundColor] = italic.color
 			if let italicDescriptor = finalFontDescriptor.withSymbolicTraits(.traitItalic) {
 				finalFont = UIFont(descriptor: italicDescriptor, size: styleSize)
 			}
 			
 		}
 		if style == .bold {
+            attributes[NSAttributedStringKey.foregroundColor] = bold.color
 			if let boldDescriptor = finalFontDescriptor.withSymbolicTraits(.traitBold) {
 				finalFont = UIFont(descriptor: boldDescriptor, size: styleSize)
 			}
-			
+
 		}
 		
 		
